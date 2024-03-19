@@ -1,27 +1,27 @@
 import * as yup from 'yup';
 export const schemaData = {
-    'Analyzers' : {
-        name: yup.string().required('required'),
-        vendor: yup.string().required('required'),
-        desc: yup.string().required('required'),
+    'Analyzer' : {
+        Name: yup.string().required('required'),
+        Vendor: yup.string().required('required'),
+        Desc: yup.string().required('required'),
         // isActive: yup.boolean().required('required'),
         // createdOn: yup.string().required('required'),
         // updatedOn: yup.string().required('required'),
         // createdBy: yup.string().required('required'),
         // updatedBy: yup.string().required('required'),
     },
-    'AnalyzerParameters' : {
-        analyzerId: yup.number().required('required'),
-        liscodeId: yup.number().required('required'),
-        lascodeId: yup.number().required('required'),
+    'AnalyzerParameter' : {
+        AnalyzerId: yup.number().required('required'),
+        LISCodeId: yup.number().required('required'),
+        LASCodeId: yup.number().required('required'),
         // isActive: yup.boolean().required('required'),
-        desc: yup.string().required('required'),
+        Desc: yup.string().required('required'),
         // createdOn: yup.string().required('required'),
         // updatedOn: yup.string().required('required'),
         // createdBy: yup.string().required('required'),
         // updatedBy: yup.string().required('required'),
     },
-    'Cpts' : {
+    'Cpt' : {
         name: yup.string().required('required'),
         description: yup.string().required('required'),
         // isActive: yup.boolean().required('required'),
@@ -30,7 +30,7 @@ export const schemaData = {
         // createdBy: yup.string().required('required'),
         // updatedBy: yup.string().required('required'),
     },
-    'LisCodes' : {
+    'LisCode' : {
         name: yup.string().required('required'),
         type: yup.boolean().required('required'),
         // isActive: yup.boolean().required('required'),
@@ -40,7 +40,7 @@ export const schemaData = {
         // createdBy: yup.string().required('required'),
         // updatedBy: yup.string().required('required'),
     },
-    'TestParameters' : {
+    'TestParameter' : {
         cptid: yup.number().required('required'),
         liscodeId: yup.number().required('required'),
         unit: yup.string().required('required'),
@@ -52,7 +52,7 @@ export const schemaData = {
         // createdBy: yup.string().required('required'),
         // updatedBy: yup.string().required('required'),
     },
-    'GenLookups' : {
+    'GenLookup' : {
         keyName: yup.string().required('required'),
         value: yup.string().required('required'),
         type: yup.boolean().required('required'),
@@ -62,7 +62,7 @@ export const schemaData = {
         // updatedBy: yup.string().required('required'),
     },
     // ==================
-    'InvoiceDetails' : {
+    'InvoiceDetail' : {
         keyName: yup.string().required('required'),
         value: yup.string().required('required'),
         type: yup.boolean().required('required'),
@@ -71,7 +71,7 @@ export const schemaData = {
         // createdBy: yup.string().required('required'),
         // updatedBy: yup.string().required('required'),
     },
-    'InvoiceMasters' : {
+    'InvoiceMaster' : {
         keyName: yup.string().required('required'),
         value: yup.string().required('required'),
         type: yup.boolean().required('required'),
@@ -80,7 +80,7 @@ export const schemaData = {
         // createdBy: yup.string().required('required'),
         // updatedBy: yup.string().required('required'),
     },
-    'OrderDetails' : {
+    'OrderDetail' : {
         name: yup.string().required('required'),
         type: yup.boolean().required('required'),
         desc: yup.string().required('required'),
@@ -89,7 +89,7 @@ export const schemaData = {
         // createdBy: yup.string().required('required'),
         // updatedBy: yup.string().required('required'),
     },
-    'OrderMasters' : {
+    'OrderMaster' : {
         name: yup.string().required('required'),
         type: yup.boolean().required('required'),
         desc: yup.string().required('required'),
@@ -98,7 +98,7 @@ export const schemaData = {
         // createdBy: yup.string().required('required'),
         // updatedBy: yup.string().required('required'),
     },
-    'PathologyPendingQueues' : {
+    'PathologyPendingQueue' : {
         name: yup.string().required('required'),
         type: yup.boolean().required('required'),
         desc: yup.string().required('required'),
@@ -107,7 +107,7 @@ export const schemaData = {
         // createdBy: yup.string().required('required'),
         // updatedBy: yup.string().required('required'),
     },
-    'PathologyResultDetails' : {
+    'PathologyResultDetail' : {
         name: yup.string().required('required'),
         type: yup.boolean().required('required'),
         desc: yup.string().required('required'),
@@ -116,7 +116,7 @@ export const schemaData = {
         // createdBy: yup.string().required('required'),
         // updatedBy: yup.string().required('required'),
     },
-    'PathologyResultMasters' : {
+    'PathologyResultMaster' : {
         name: yup.string().required('required'),
         type: yup.boolean().required('required'),
         desc: yup.string().required('required'),
@@ -125,7 +125,7 @@ export const schemaData = {
         // createdBy: yup.string().required('required'),
         // updatedBy: yup.string().required('required'),
     },
-    'RoleModules' : {
+    'RoleModule' : {
         roleId: yup.string().required('required'),
         moduleId: yup.string().required('required'),
         desc: yup.string().required('required'),
@@ -134,7 +134,7 @@ export const schemaData = {
         // createdBy: yup.string().required('required'),
         // updatedBy: yup.string().required('required'),
     },
-    'Modules' : {
+    'Module' : {
         roleId: yup.string().required('required'),
         moduleId: yup.string().required('required'),
         desc: yup.string().required('required'),
@@ -143,7 +143,7 @@ export const schemaData = {
         // createdBy: yup.string().required('required'),
         // updatedBy: yup.string().required('required'),
     },
-    'Roles' : {
+    'Role' : {
         name: yup.string().required('required'),
         type: yup.boolean().required('required'),
         desc: yup.string().required('required'),
@@ -152,7 +152,7 @@ export const schemaData = {
         // createdBy: yup.string().required('required'),
         // updatedBy: yup.string().required('required'),
     },
-    'TestCategories' : {
+    'TestCategorie' : {
         categoryName: yup.string().required('required'),
         desc: yup.string().required('required'),
         // createdOn: yup.string().required('required'),
@@ -160,7 +160,7 @@ export const schemaData = {
         // createdBy: yup.string().required('required'),
         // updatedBy: yup.string().required('required'),
     },
-    'TestSamples' : {
+    'TestSample' : {
         cptid: yup.string().required('required'),
         sampleName: yup.string().required('required'),
         desc: yup.string().required('required'),
@@ -169,7 +169,7 @@ export const schemaData = {
         // createdBy: yup.string().required('required'),
         // updatedBy: yup.string().required('required'),
     },
-    'TestUnits' : {
+    'TestUnit' : {
         name: yup.string().required('required'),
         desc: yup.string().required('required'),
         // createdOn: yup.string().required('required'),
@@ -177,7 +177,7 @@ export const schemaData = {
         // createdBy: yup.string().required('required'),
         // updatedBy: yup.string().required('required'),
     },
-    'Users' : {
+    'User' : {
         name: yup.string().required('required'),
         mobile: yup.string().required('required'),
         email: yup.string().required('required'),
@@ -200,19 +200,19 @@ export const schemaData = {
     },
     'HISAnalyzer' : {
         'Analyzer' : {
-            analyzerId: yup.number().required('required'),
-            analyzerCode: yup.string().required('required'),
-            aparamName: yup.string().required('required'),
-            aunit: yup.string().required('required'),
-            arange: yup.string().required('required'),
+            AnalyzerID: yup.number().required('required'),
+            AnalyzerCode: yup.string().required('required'),
+            AParamName: yup.string().required('required'),
+            AUnit: yup.string().required('required'),
+            ARange: yup.string().required('required'),
 
         },
         'HIS' : {
-            hisId: yup.number().required('required'),
-            hisCode: yup.string().required('required'),
-            hparamName: yup.string().required('required'),
-            hunit: yup.string().required('required'),
-            hrange: yup.string().required('required'),
+            HISID: yup.number().required('required'),
+            HISCode: yup.string().required('required'),
+            HParamName: yup.string().required('required'),
+            HUnit: yup.string().required('required'),
+            HRange: yup.string().required('required'),
 
         }
     },

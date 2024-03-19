@@ -45,8 +45,10 @@ const AddEditPopup = ({ modalValue, editDataValue,url,fetchData,LisCodesList,ana
     }
     
     useEffect(()=>{
-        if(url !== 'HisAnalyzers'){
-            setDataKeys(Object.keys(schemaData[url]))
+        if(editValue){
+            if(url !== 'HisAnalyzer'){
+                setDataKeys(Object.keys(schemaData[url]))
+            }
         }
     },[url])
 
@@ -78,17 +80,17 @@ const AddEditPopup = ({ modalValue, editDataValue,url,fetchData,LisCodesList,ana
         if (editValue?.id) {
             Object.keys(editValue).forEach(key => {
                 const name = editValue[key];
-                if(key == 'cptName'){
+                if(key == 'CptName'){
                     const defaultValue = cptMenuOptions.find(option => option.label === name);
-                    if (defaultValue) setValue('cptid', defaultValue);
+                    if (defaultValue) setValue('Cptid', defaultValue);
                 }
-                if(key == 'liscodeName'){
+                if(key == 'LiscodeName'){
                     const defaultValue = liscodeMenuOptions.find(option => option.label === name);
-                    if (defaultValue)  setValue('liscodeId', defaultValue);
+                    if (defaultValue)  setValue('LISCodeId', defaultValue);
                 }
-                if(key == 'analyzerName'){
+                if(key == 'AnalyzerName'){
                     const defaultValue = analyzerMenuOptions.find(option => option.label === name);
-                    if (defaultValue) setValue('analyzerId', defaultValue);
+                    if (defaultValue) setValue('AnalyzerId', defaultValue);
                 }
                 else{
                     setValue(key, editValue[key]); 
@@ -162,7 +164,7 @@ const AddEditPopup = ({ modalValue, editDataValue,url,fetchData,LisCodesList,ana
                             <Grid container spacing={2} sx={{mx:3}}  >
                                 {dataKeys?.map((item,i)=>(
                                     <Grid key={item+i} item xs={10.5} sm={5.5} md={3.7} lg={3.7}>
-                                        {item === "analyzerId" || item === "liscodeId" || item === "cptid"|| item === "type"? 
+                                        {item === "AnalyzerId" || item === "LiscodeId" || item === "Cptid"|| item === "type"? 
                                         <SelectFieldComponent
                                             name={item}
                                             label={ item === "analyzerId" ? 'Analyzers' : item === "liscodeId" ? 'Liscodes' : item === "cptid" ? 'CptId': 'Type' }

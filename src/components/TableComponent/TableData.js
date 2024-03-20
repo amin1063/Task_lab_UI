@@ -60,14 +60,6 @@ const  TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodes
         }
     }, [data])
 
-<<<<<<< HEAD
-    console.log("data",data);
-=======
-    // console.log("data", data);
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
-
-
-
     const handleSort = (property) => {
         const isAsc = orderBy === property && order === 'asc';
         setOrderBy(property);
@@ -301,14 +293,8 @@ const  TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodes
                                         <TableRow key={row.ID || row.Id} sx={{
                                             '&:hover': {
                                                 // scale: '1.03'
-                                                // border: '1.5px solid black',
-<<<<<<< HEAD
+                                                border: '1.5px solid black',
                                                 boxSizing: 'border-box'
-=======
-                                                boxSizing: 'border-box',
-                                                backgroundColor: '#C0C0C0'
-
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
                                             }
                                         }}>
                                             {tableHeadings?.map((item, i) => (

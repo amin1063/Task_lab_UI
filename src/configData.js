@@ -79,7 +79,11 @@ export const navConfig = [
 export const analyzerTableHeadings = [
   { id: 'id', label: 'Sr.No' },
 <<<<<<< HEAD
+<<<<<<< HEAD
   { id: 'Name', label: 'Name' },
+=======
+  { id: 'Name', label: 'Analyzer Name' },
+>>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
 =======
   { id: 'Name', label: 'Analyzer Name' },
 >>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
@@ -97,8 +101,13 @@ export const analyzerParameterTableHeadings = [
   { id: 'id', label: 'Sr.No' },
   { id: 'AnalyzerName', label: 'Analyzer Name' },
 <<<<<<< HEAD
+<<<<<<< HEAD
   { id: 'LiscodeName', label: 'Liscode Name' },
   { id: 'LASCodeID', label: 'Lascode Id' },
+=======
+  { id: 'LiscodeName', label: 'LISCode Name' },
+  { id: 'LASCodeID', label: 'LASCodeID' },
+>>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
 =======
   { id: 'LiscodeName', label: 'LISCode Name' },
   { id: 'LASCodeID', label: 'LASCodeID' },
@@ -142,7 +151,11 @@ export const liscodesTableHeadings = [
 export const testCategoriesTableHeadings = [
   { id: 'id', label: 'Sr.No' },
 <<<<<<< HEAD
+<<<<<<< HEAD
   { id: 'categoryName', label: 'Category Name' },
+=======
+  { id: 'CategoryName', label: 'Category Name' },
+>>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
 =======
   { id: 'CategoryName', label: 'Category Name' },
 >>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
@@ -158,9 +171,15 @@ export const testCategoriesTableHeadings = [
 export const testParameterTableHeadings = [
   { id: 'id', label: 'Sr.No' },
 <<<<<<< HEAD
+<<<<<<< HEAD
   { id: 'cptName', label: 'CPT Name' },
   { id: 'liscodeName', label: 'Liscode Name' },
   { id: 'unit', label: 'Unit' },
+=======
+  { id: 'CptName', label: 'CPT Name' },
+  { id: 'LiscodeName', label: 'Liscode Name' },
+  { id: 'Unit', label: 'Unit' },
+>>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
 =======
   { id: 'CptName', label: 'CPT Name' },
   { id: 'LiscodeName', label: 'Liscode Name' },
@@ -180,7 +199,11 @@ export const testSampleTableHeadings = [
   { id: 'id', label: 'Sr.No' },
   { id: 'SampleName', label: 'Sample Name' },
 <<<<<<< HEAD
+<<<<<<< HEAD
   { id: 'Cptid', label: 'CPT Name' },
+=======
+  { id: 'CPTID', label: 'CPT Name' },
+>>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
 =======
   { id: 'CPTID', label: 'CPT Name' },
 >>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
@@ -208,8 +231,13 @@ export const testUnitTableHeadings = [
 export const pathologyPendingQueuesTableHeadings  = [
   { id: 'id', label: 'Sr.No' },
 <<<<<<< HEAD
+<<<<<<< HEAD
   { id: 'CptName', label: 'CPT Name' },
   { id: 'oOrderdetailId', label: 'Order Deatil ID' },
+=======
+  { id: 'CPTID', label: 'CPT Name' },
+  { id: 'OrderDetailID', label: 'Order Deatil ID' },
+>>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
 =======
   { id: 'CPTID', label: 'CPT Name' },
   { id: 'OrderDetailID', label: 'Order Deatil ID' },
@@ -246,7 +274,11 @@ export const pathologyResultMastersTableHeadings  = [
   { id: 'SampleId', label: 'Sample Id' },
   { id: 'MRN', label: 'MRN' },
 <<<<<<< HEAD
+<<<<<<< HEAD
   { id: 'PatientId', label: 'Patient Name' },
+=======
+  { id: 'Patient', label: 'Patient Name' },
+>>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
 =======
   { id: 'Patient', label: 'Patient Name' },
 >>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
@@ -295,9 +327,15 @@ export const invoiceMastersTableHeadings  = [
 export const orderDetailsTableHeadings  = [
   { id: 'id', label: 'Sr.No' },
 <<<<<<< HEAD
+<<<<<<< HEAD
   { id: 'OrderId', label: 'Order Id' },
   { id: 'Cptid', label: 'CPT Id' },
   { id: 'Pptprice', label: 'CPT Price' },
+=======
+  { id: 'OrderID', label: 'Order Id' },
+  { id: 'CPTID', label: 'CPT Id' },
+  { id: 'CPTPrice', label: 'CPT Price' },
+>>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
 =======
   { id: 'OrderID', label: 'Order Id' },
   { id: 'CPTID', label: 'CPT Id' },
@@ -316,9 +354,15 @@ export const orderDetailsTableHeadings  = [
 export const orderMastersTableHeadings  = [
   { id: 'id', label: 'Sr.No' },
 <<<<<<< HEAD
+<<<<<<< HEAD
   { id: 'UserId', label: 'User Id' },
   { id: 'Physician', label: 'Physician' },
   { id: 'MRBN', label: 'MRN' },
+=======
+  { id: 'UserID', label: 'User Id' },
+  { id: 'Physician', label: 'Physician' },
+  { id: 'MRN', label: 'MRN' },
+>>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
 =======
   { id: 'UserID', label: 'User Id' },
   { id: 'Physician', label: 'Physician' },
@@ -389,15 +433,21 @@ export const usersTableHeadings  = [
   { id: 'id', label: 'Sr.No' },
   { id: 'Name', label: 'Name' },
 <<<<<<< HEAD
+<<<<<<< HEAD
   { id: 'mobile', label: 'Mobile' },
   { id: 'email', label: 'Email' },
   { id: 'username', label: 'Username' },
   { id: 'password', label: 'Password' },
 =======
+=======
+>>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
   { id: 'Mobile', label: 'Mobile' },
   { id: 'Email', label: 'Email' },
   { id: 'Username', label: 'Username' },
   { id: 'Password', label: 'Password' },
+<<<<<<< HEAD
+>>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
+=======
 >>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
   { id: 'Desc', label: 'Description' },
   { id: 'IsActive', label: 'IsActive' },

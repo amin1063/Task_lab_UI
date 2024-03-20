@@ -84,6 +84,7 @@ const AddEditPopup = ({ modalValue, editDataValue,url,fetchData,LisCodesList,ana
                 if(key == 'CptName'){
                     const defaultValue = cptMenuOptions.find(option => option.label === name);
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if (defaultValue) setValue('Cptid', defaultValue);
                 }
                 if(key == 'LiscodeName'){
@@ -93,6 +94,17 @@ const AddEditPopup = ({ modalValue, editDataValue,url,fetchData,LisCodesList,ana
                 if(key == 'AnalyzerName'){
                     const defaultValue = analyzerMenuOptions.find(option => option.label === name);
                     if (defaultValue) setValue('AnalyzerId', defaultValue);
+=======
+                    if (defaultValue) setValue('CPTID', defaultValue);
+                }
+                if(key == 'LiscodeName'){
+                    const defaultValue = liscodeMenuOptions.find(option => option.label === name);
+                    if (defaultValue)  setValue('LISCodeID', defaultValue);
+                }
+                if(key == 'AnalyzerName'){
+                    const defaultValue = analyzerMenuOptions.find(option => option.label === name);
+                    if (defaultValue) setValue('AnalyzerID', defaultValue);
+>>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
 =======
                     if (defaultValue) setValue('CPTID', defaultValue);
                 }
@@ -179,7 +191,11 @@ const AddEditPopup = ({ modalValue, editDataValue,url,fetchData,LisCodesList,ana
                                 {dataKeys?.map((item,i)=>(
                                     <Grid key={item+i} item xs={10.5} sm={5.5} md={3.7} lg={3.7}>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         {item === "AnalyzerId" || item === "LiscodeId" || item === "Cptid"|| item === "type"? 
+=======
+                                        {item === "AnalyzerID" || item === "LISCodeID" || item === "CPTID"|| item === "Type"? 
+>>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
 =======
                                         {item === "AnalyzerID" || item === "LISCodeID" || item === "CPTID"|| item === "Type"? 
 >>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d

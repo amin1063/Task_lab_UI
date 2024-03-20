@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TableSortLabel, TextField, Typography, TablePagination, IconButton, Stack, Button, useMediaQuery, Tooltip } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TableSortLabel, TextField, Typography, TablePagination, IconButton, Stack, Button, useMediaQuery, Tooltip, Popover, InputAdornment } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
@@ -15,6 +15,8 @@ import CircularProgress from '@mui/material/CircularProgress';
 import HISAnalyzerDialog from './HISAnalyzerDialog';
 import HISDetailViewPopup from './HISDetailViewPopup';
 import SampleIdDetailPopup from './SampleIdDetailPopup';
+import SearchIcon from '@mui/icons-material/Search';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 const  TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodesList, analyzersList, cptList, hisList, rerender, readable, showColor }) => {
@@ -35,8 +37,21 @@ const  TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodes
     const [deleteId, setDeleteId] = useState(0)
     const [loading, setLoading] = useState(true)
     const isScreenSmall = useMediaQuery('(max-width:945px)');
-    const forHIS = ['hisName', 'hisCode', 'hparamName', 'hunit', 'hrange'];
-    const forAnalyzer = ['analyzerName', 'analyzerCode', 'aparamName', 'aunit', 'arange'];
+    const forHIS = ['HisName', 'HisCode', 'HparamName', 'Hunit', 'Hrange'];
+    const forAnalyzer = ['AnalyzerCode', 'AnalyzerName', 'AparamName', 'Aunit', 'Arange'];
+    const [anchorEl, setAnchorEl] = useState(null);
+    const [sampleSearch, setSampleSearch] = useState('');
+
+
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+  
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
+  
+    const open = Boolean(anchorEl);
 
     useEffect(() => {
         setTableData(data)
@@ -45,7 +60,11 @@ const  TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodes
         }
     }, [data])
 
+<<<<<<< HEAD
     console.log("data",data);
+=======
+    // console.log("data", data);
+>>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
 
 
 
@@ -75,6 +94,16 @@ const  TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodes
     const sortedData = orderBy
         ? [...filteredData].sort((a, b) => (order === 'asc' ? a[orderBy] - b[orderBy] : b[orderBy] - a[orderBy]))
         : filteredData;
+
+    useEffect(()=>{
+        if(sampleSearch.length){
+            const filteredData = data && data?.filter((row) =>
+            row?.SampleId?.toLowerCase().startsWith(sampleSearch?.toLowerCase())) 
+            setTableData(filteredData)
+        }else{
+            setTableData(data)
+        }
+    },[sampleSearch])
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -116,6 +145,9 @@ const  TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodes
         setEditValue(data)
         setSampleOpenDetailsModal(true)
 
+    }
+    const openSearchField = () => {
+        console.log("samplee");
     }
 
     return (
@@ -214,6 +246,43 @@ const  TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodes
                                             >
                                                 {item.label}
                                             </TableSortLabel>
+                                                {item.id == 'SampleId' &&
+                                                    <>
+                                                        <IconButton onClick={handleClick} aria-label="edit" id={'sampleSearch'} >
+                                                            <SearchIcon  sx={{ ml: 0.5 }} />
+                                                        </IconButton>
+                                                        <Popover
+                                                            id={'sampleSearch'}
+                                                            open={open}
+                                                            anchorEl={anchorEl}
+                                                            onClose={handleClose}
+                                                            anchorOrigin={{
+                                                                vertical: 'top',
+                                                                horizontal: 'right',
+                                                            }}
+                                                            transformOrigin={{
+                                                                vertical: 'top',
+                                                                horizontal: 'left',
+                                                              }}
+                                                            sx={{ml:2}}
+                                                        >
+                                                            <TextField
+                                                            value={sampleSearch}
+                                                            placeholder='Search SampleID here ...'
+                                                            onChange={(e)=>setSampleSearch(e.target.value)}
+                                                            InputProps={{
+                                                                endAdornment: <InputAdornment position="end">
+                                                                    <>
+                                                                      <IconButton aria-label="cancel"  onClick={(e)=>setSampleSearch('')}>
+                                                                    <CloseIcon color='error' />
+                                                                        </IconButton>
+                                                                    </>
+                                                                    </InputAdornment>
+                                                              }}
+                                                            />
+                                                        </Popover>
+                                                    </>
+                                                }
                                         </TableCell>
                                     </React.Fragment>
                                 ))}
@@ -229,11 +298,17 @@ const  TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodes
                             ) : sortedData?.length ? (
                                 <>
                                     {sortedData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, rowIndex) => (
-                                        <TableRow key={row.id} sx={{
+                                        <TableRow key={row.ID || row.Id} sx={{
                                             '&:hover': {
                                                 // scale: '1.03'
                                                 // border: '1.5px solid black',
+<<<<<<< HEAD
                                                 boxSizing: 'border-box'
+=======
+                                                boxSizing: 'border-box',
+                                                backgroundColor: '#C0C0C0'
+
+>>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
                                             }
                                         }}>
                                             {tableHeadings?.map((item, i) => (
@@ -249,7 +324,7 @@ const  TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodes
                                                                         <IconButton aria-label="edit" onClick={() => editData(row)}>
                                                                             <EditIcon />
                                                                         </IconButton>
-                                                                        <IconButton onClick={() => confirmDelete(row.id)} aria-label="delete">
+                                                                        <IconButton onClick={() => confirmDelete(row.ID || row.Id)} aria-label="delete">
                                                                             <DeleteIcon sx={{ color: 'red' }} />
                                                                         </IconButton>
                                                                     </>
@@ -261,7 +336,7 @@ const  TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodes
                                                         ) : item.id === 'id' ? (
                                                             <TableCell sx={{ paddingY: '10px' }}>{(page * rowsPerPage) + rowIndex + 1}</TableCell>
                                                         ) :
-                                                            item.id === 'sampleId' ? (
+                                                            item.id === 'SampleId' ? (
                                                                 <Tooltip arrow title="Click for Details" placement="bottom">
                                                                     <TableCell onClick={() => sampleDetailView(row)} sx={{ paddingY: '10px', color: '#27A3B9', fontWeight: '600', cursor: 'pointer' }}>
                                                                         {row[item.id] || '-'}

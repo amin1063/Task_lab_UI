@@ -1,4 +1,4 @@
-export const baseURL = 'http://13.233.159.252/api/'
+export const baseURL = '//13.233.159.252/api/'
 
 export const navConfig = [
   { title: 'Home', path: '/' },

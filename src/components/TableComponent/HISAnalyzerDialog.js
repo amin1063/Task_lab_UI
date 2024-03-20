@@ -27,15 +27,7 @@ const HISAnalyzerDialog = ({ modalValue, editDataValue, url, LisCodesList, analy
     ])
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    const hisSchema = {
-=======
     const hisAddSchema = {
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
-=======
-    const hisAddSchema = {
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
         HISID: yup.number().required('required'),
         HISCode: yup.string().required('required'),
         AnalyzerID: yup.number().required('required'),
@@ -103,8 +95,6 @@ const HISAnalyzerDialog = ({ modalValue, editDataValue, url, LisCodesList, analy
         }
     }, [analyzersList, LisCodesList, hisList])
 
-    
-
     useEffect(() => {
         if (editValue?.Id) {
             Object.keys(editValue).forEach(key => {
@@ -112,38 +102,20 @@ const HISAnalyzerDialog = ({ modalValue, editDataValue, url, LisCodesList, analy
                 if (key == 'HisName') {
                     const defaultValue = hisMenuOptions.find(option => option.label === name);
                     if (defaultValue) setValue('HISID', defaultValue);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
                     setValue('HISCode', editValue['HisCode']);
                     // setValue('HisName', defaultValue);
                     setValue('HParamName', editValue['HparamName']);
                     setValue('HRange', editValue['Hrange']);
                     setValue('HUnit', editValue['Hunit']);
                     
-<<<<<<< HEAD
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
-=======
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
                 }
                 if (key == 'AnalyzerName') {
                     const defaultValue = analyzerMenuOptions.find(option => option.label === name);
                     if (defaultValue) setValue('AnalyzerID', defaultValue);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
                     setValue('AnalyzerName', defaultValue);
                     setValue('AParamName', editValue['AparamName']);
                     setValue('ARange', editValue['Arange']);
                     setValue('AUnit', editValue['Aunit']);
-<<<<<<< HEAD
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
-=======
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
                 }
                 else {
                     setValue(key, editValue[key]);
@@ -163,24 +135,6 @@ const HISAnalyzerDialog = ({ modalValue, editDataValue, url, LisCodesList, analy
         e.preventDefault()
         let data = watch()
         let addData = data;
-<<<<<<< HEAD
-<<<<<<< HEAD
-        addData.createdBy = 1;
-        addData.updatedBy = 1;
-        addData.createdOn = currentDateTime;
-        addData.updatedOn = currentDateTime;
-        addData.isActive = true
-        addData.id = 0;
-        addData.aunt = data.AUnit;
-
-        delete data.AUnit
-
-        if (editValue?.Id) {
-            data.id = editValue.id
-            if (data.AnalyzerID) {
-                delete data.analyzerName;
-
-=======
         addData.CreatedBy = 1;
         addData.UpdatedBy = 1;
         addData.CreatedOn = currentDateTime;
@@ -201,51 +155,17 @@ const HISAnalyzerDialog = ({ modalValue, editDataValue, url, LisCodesList, analy
             delete data.AnalyzerName
         }
 
-=======
-        addData.CreatedBy = 1;
-        addData.UpdatedBy = 1;
-        addData.CreatedOn = currentDateTime;
-        addData.UpdatedOn = currentDateTime;
-        addData.IsActive = true
-        // addData.ID = 0;
-        addData.AUnt = data.AUnit;
-        addData.AnalyzerID = data.AnalyzerName;
-        delete data.AUnit
-        delete data.AparamName
-        delete data.Arange
-        delete data.Aunit
-        delete data.HparamName
-        delete data.Hrange
-        delete data.Hunit
-        if(!editValue?.Id){
-            delete data.HisName
-            delete data.AnalyzerName
-        }
-
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
         if (editValue?.Id) {
             data.Id = editValue.Id
             delete data.HisCode
             if (data.AnalyzerName) {
                 delete data.AnalyzerName;
-<<<<<<< HEAD
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
-=======
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
                 if (data.AnalyzerID?.label) {
                     data.AnalyzerID = data.AnalyzerID.value
                 }
             }
             if (data.HISID) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                delete data.analyzerName;
-=======
                 delete data.HisName;
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
-=======
-                delete data.HisName;
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
                 if (data.HISID?.label) {
                     data.HISID = data.HISID.value
                 }
@@ -257,8 +177,6 @@ const HISAnalyzerDialog = ({ modalValue, editDataValue, url, LisCodesList, analy
             Close()
         }
     }
-
-    console.log('editValue',editValue);
 
     return (
         <>
@@ -306,23 +224,10 @@ const HISAnalyzerDialog = ({ modalValue, editDataValue, url, LisCodesList, analy
                                                                         <TextFieldComponent
                                                                             name={item}
                                                                             label={upperCase(
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                                                                item == 'Hunit' ? 'Unit Of Measure' :
-                                                                                        item == 'HparamName' ? 'Test Name' :
-                                                                                                item == 'Hrange' ? 'Range' :
-                                                                                                    item == 'HisCode' ? 'Test ID' :
-=======
-=======
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
                                                                                 item == 'HUnit' ? 'Unit Of Measure' :
                                                                                         item == 'HParamName' ? 'Test Name' :
                                                                                                 item == 'HRange' ? 'Range' :
                                                                                                     item == 'HISCode' ? 'Test ID' :
-<<<<<<< HEAD
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
-=======
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
                                                                                                         item)}
                                                                             register={register}
                                                                         />
@@ -358,15 +263,7 @@ const HISAnalyzerDialog = ({ modalValue, editDataValue, url, LisCodesList, analy
                                             <Paper sx={{ p: 2 }}>
                                                 {dataKeys.Analyzer?.map((item, i) => (
                                                     <Stack spacing={2} sx={{ mt: i == 0 ? 0 : 2.5 }} key={item + i}>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                                        {item === "AnalyzerId" ? (
-=======
                                                         {item === "AnalyzerID" ? (
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
-=======
-                                                        {item === "AnalyzerID" ? (
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
                                                             <SelectFieldComponent
                                                                 name={'AnalyzerName'}
                                                                 label={'Analyzer'}
@@ -391,21 +288,9 @@ const HISAnalyzerDialog = ({ modalValue, editDataValue, url, LisCodesList, analy
                                                                         <TextFieldComponent
                                                                             name={item}
                                                                             label={upperCase(
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                                                                    item == 'Aunit' ? 'Unit Of Measure' :
-                                                                                            item == 'AparamName' ? 'Parameter Name' :
-                                                                                                    item == 'Arange' ? 'Range' :
-=======
                                                                                     item == 'AUnit' ? 'Unit Of Measure' :
                                                                                             item == 'AParamName' ? 'Parameter Name' :
                                                                                                     item == 'ARange' ? 'Range' :
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
-=======
-                                                                                    item == 'AUnit' ? 'Unit Of Measure' :
-                                                                                            item == 'AParamName' ? 'Parameter Name' :
-                                                                                                    item == 'ARange' ? 'Range' :
->>>>>>> e4de71bfcca03b16b6ff2262035800d95f58de4d
                                                                                                     item == 'AnalyzerCode' ? 'Host Code' :
                                                                                                         item)}
                                                                             register={register}

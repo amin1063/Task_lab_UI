@@ -19,7 +19,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 
 
-const  TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodesList, analyzersList, cptList, hisList, rerender, readable, showColor }) => {
+const TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodesList, analyzersList, cptList, hisList, rerender, readable, showColor }) => {
     const dispatch = useDispatch()
     const [tableData, setTableData] = useState([])
     const [orderBy, setOrderBy] = useState(null);
@@ -59,6 +59,10 @@ const  TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodes
             setLoading(false)
         }
     }, [data])
+
+    // console.log("data", data);
+
+
 
     const handleSort = (property) => {
         const isAsc = orderBy === property && order === 'asc';
@@ -293,8 +297,10 @@ const  TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodes
                                         <TableRow key={row.ID || row.Id} sx={{
                                             '&:hover': {
                                                 // scale: '1.03'
-                                                border: '1.5px solid black',
-                                                boxSizing: 'border-box'
+                                                // border: '1.5px solid black',
+                                                boxSizing: 'border-box',
+                                                backgroundColor: '#C0C0C0'
+
                                             }
                                         }}>
                                             {tableHeadings?.map((item, i) => (

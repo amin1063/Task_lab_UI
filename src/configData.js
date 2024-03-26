@@ -33,6 +33,7 @@ export const navConfig = [
     // { title: 'Pathology Result Details', path: '/PathologyResultDetails' },
     { title: 'Pathology Result Masters', path: '/PathologyResultMasters' },
     { title: 'HearBeat Results', path: '/HeartBeatResults' },
+    { title: 'Analyzers-Machine', path: '/Analyzer-Machine' },
     ]
   },
   {

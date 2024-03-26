@@ -50,7 +50,7 @@ const TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodesL
     const [searchMenuOptions, setSearchMenuOptions] = useState([])
     const dateArray = ['Received', 'Collected', 'CreatedOn', 'UpdatedOn', 'Order'];
     const [analyzerMenuOptions, setAnalyzerMenuOptions] = useState([]);
-    const [selectedAnalyzer,setSelectedAnalyzer] = useState('')
+    const [selectedAnalyzer, setSelectedAnalyzer] = useState('')
 
     const handleClick = (event, selectedId) => {
         setAnchorEl(event.currentTarget);
@@ -83,7 +83,7 @@ const TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodesL
 
 
     useEffect(() => {
-        if(!analyzerDropDown){
+        if (!analyzerDropDown) {
             setTableData(data)
         }
         if (data?.length) {
@@ -200,12 +200,14 @@ const TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodesL
         // }
     }, [analyzersList, LisCodesList, hisList])
 
-    useEffect(()=>{
-        if(selectedAnalyzer?.length){
-            let filterData = data?.filter((item,i)=> item?.AnalyzerName == selectedAnalyzer)
-            setTableData(filterData) 
+
+    useEffect(() => {
+        if (selectedAnalyzer?.length) {
+            let filterData = data?.filter((item, i) => item?.AnalyzerName == selectedAnalyzer)
+            setTableData(filterData)
         }
-    },[selectedAnalyzer])
+    }, [selectedAnalyzer])
+
 
     return (
         <>
@@ -290,7 +292,7 @@ const TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodesL
                                         endIcon={<AddIcon />}
                                         onClick={() => url == 'HisAnalyzer' ? setOpenHisModal(true) : setOpenModal(true)}
                                     >
-                                      { url == 'HisAnalyzer' ? 'HIS Mapping' : 'Add item' }  
+                                        {url == 'HisAnalyzer' ? 'HIS Mapping' : 'Add item'}
                                     </Button>
                                 )}
                             </>
@@ -469,12 +471,9 @@ const TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodesL
                                                                             <TableCell sx={{ paddingY: '5px', boxSizing: 'border-box', pr: 0 }}>{row[item.id] || DateConvertion(currentDate)}</TableCell>
                                                                         )
                                                                             : (
-
                                                                                 <TableCell sx={{ paddingY: '5px', boxSizing: 'border-box', pr: 0 }}>{row[item.id] || '-'}</TableCell>
                                                                             )
                                                     }
-
-
                                                 </React.Fragment>
                                             ))}
                                         </TableRow>

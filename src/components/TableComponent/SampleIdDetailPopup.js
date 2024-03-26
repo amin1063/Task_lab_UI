@@ -5,7 +5,7 @@ import '../../App.css'
 import { useSelector } from 'react-redux';
 import { SampleDetailsTableHeadings } from '../../configData';
 
-const SampleIdDetailPopup = ({ detailsModalValue, editDataValue }) => {
+const SampleIdDetailPopup = ({ detailsModalValue, editDataValue,sampleFilterId }) => {
 
   const [editValue, setEditValue] = editDataValue;
   const [openDetailsModal, setOpenDetailsModal] = detailsModalValue;
@@ -30,7 +30,12 @@ const SampleIdDetailPopup = ({ detailsModalValue, editDataValue }) => {
 
   useEffect(() => {
     if (pathologyResultDetailsList?.length) {
-      let data = pathologyResultDetailsList.filter((item, i) => item.SampleID == editValue.SampleId)
+      let data;
+      if( sampleFilterId == 'MRN'){
+        data = pathologyResultDetailsList.filter((item, i) => item.MRN == editValue.MRN)
+      }else{
+        data = pathologyResultDetailsList.filter((item, i) => item.SampleID == editValue.SampleId)
+      }
       setDetailsList(data)
       setLoading(false)
     }
@@ -56,15 +61,7 @@ const SampleIdDetailPopup = ({ detailsModalValue, editDataValue }) => {
               </IconButton>
             </Box>
             <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'justify', padding: '0 20px', mt: 2 }}>
-              {/* <Box >
-                                {dataKeys?.map((item, i) => (
-                                    <Stack key={i} direction={'row'} gap={1} sx={{ textAlign: 'justify', paddingBottom: '8px' }}>
-                                        <Typography sx={{ fontSize: '17px', fontWeight: 'bold', color: '#666' }}>{upperCase(item)}</Typography> : <Typography sx={{ fontSize: '17px', color: '#444' }}>{editValue[item] || '-'}</Typography>
-                                    </Stack>
-                                ))}
-                            </Box> */}
                             <Card sx={{ width: '100%', margin: '0 auto', my: 0,mb:2, p: 2 }}>
-
                             {detailsData.map((item, i) => (
                                 <Stack  direction={'row'} gap={1} sx={{ 
                                   textAlign: 'justify',
@@ -85,7 +82,7 @@ const SampleIdDetailPopup = ({ detailsModalValue, editDataValue }) => {
                 <TableContainer sx={{ maxHeight: 440 }}>
                   <Table stickyHeader aria-label="sticky table">
                     <TableHead>
-                      <TableRow sx={{ backgroundColor: 'black !important' }}>
+                      <TableRow>
                         {SampleDetailsTableHeadings.map((column) => (
                           <TableCell
                             key={column.id}

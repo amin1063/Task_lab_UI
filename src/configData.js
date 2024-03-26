@@ -1,4 +1,6 @@
-export const baseURL = '//13.233.159.252/api/'
+// export const baseURL = 'http://localhost:50486/api/'
+// export const baseURL = 'http://13.233.159.252/api/'
+export const baseURL = 'https://hitechways.info/api/'
 
 export const navConfig = [
   { title: 'Home', path: '/' },
@@ -13,6 +15,8 @@ export const navConfig = [
       { title: 'HIS Analyzer', path: '/HISAnalyzer' },
     ]
   },
+
+  
   {
     title: 'Tests',
     children: [
@@ -28,6 +32,7 @@ export const navConfig = [
       // { title: 'Pathology Pending Queues', path: '/PathologyPendingQueues' },
     // { title: 'Pathology Result Details', path: '/PathologyResultDetails' },
     { title: 'Pathology Result Masters', path: '/PathologyResultMasters' },
+    { title: 'HearBeat Results', path: '/HeartBeatResults' },
     ]
   },
   {
@@ -82,7 +87,7 @@ export const analyzerTableHeadings = [
   { id: 'Vendor', label: 'Vendor' },
   { id: 'Desc', label: 'Description' },
   { id: 'IsActive', label: 'IsActive' },
-  // { id: 'createdOn', label: 'CreatedOn' },
+  { id: 'CreatedOn', label: 'CreatedOn' },
   // { id: 'updatedOn', label: 'UpdatedOn' },
   // { id: 'createdBy', label: 'CreatedBy' },
   // { id: 'updatedBy', label: 'UpdatedBy' },
@@ -218,10 +223,12 @@ export const pathologyResultMastersTableHeadings  = [
   { id: 'SampleId', label: 'Sample Id' },
   { id: 'MRN', label: 'MRN' },
   { id: 'Patient', label: 'Patient Name' },
+  { id: 'Received', label: 'Received' },
+  { id: 'Collected', label: 'Collected' },
   // { id: 'labId', label: 'Lab Id' },
   { id: 'Status', label: 'Status' },
   // { id: 'Desc', label: 'Description' },
-  { id: 'IsActive', label: 'IsActive' },
+  // { id: 'IsActive', label: 'IsActive' },
   // { id: 'createdOn', label: 'CreatedOn' },
   // { id: 'updatedOn', label: 'UpdatedOn' },
   // { id: 'createdBy', label: 'CreatedBy' },
@@ -391,11 +398,11 @@ export const HisAnalyzerTableHeadings  = [
 
 export const SampleDetailsTableHeadings  = [
   // { id: 'id', label: 'Sr.No' },
-  { id: 'TestId', label: 'Test ID' },
-  { id: 'TestName', label: 'Test Name' },
+  { id: 'LisId', label: 'Test ID' },
+  { id: 'LISCodeName', label: 'Test Name' },
   { id: 'HostCode', label: 'Host Code' },
   { id: 'Result', label: 'Result' },
-  { id: 'Result', label: 'History' },
+  { id: 'History', label: 'History' },
   { id: 'Unit', label: 'Unit' },
   { id: 'Range', label: 'Range' },
   { id: 'AbnormalFlag', label: 'Abnormal' },
@@ -407,6 +414,12 @@ export const SampleDetailsTableHeadings  = [
   // { id: 'updatedBy', label: 'UpdatedBy' },
   // { id: 'actions', label: 'Actions' },
 ];
+
+export const HeartBeatHeadings = [
+  { id: 'MachineName', label: 'MachineName' },
+  { id: 'Heartbeat', label: 'Heartbeat' },
+  { id: 'IsActive', label: 'IsActive' },
+]
 
 
 

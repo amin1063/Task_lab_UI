@@ -47,7 +47,7 @@ const AddEditPopup = ({ modalValue, editDataValue,url,fetchData,LisCodesList,ana
     
     useEffect(()=>{
         if(editValue){
-            if(url !== 'HisAnalyzer'){
+            if(url !== 'HisAnalyzer' || url !== 'TestOrder' ){
                 setDataKeys(Object.keys(schemaData[url]))
             }
         }

@@ -105,6 +105,7 @@ const TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodesL
         row?.Name?.toLowerCase().includes(searchTerm?.toLowerCase())
         || row?.ID?.toString().includes(searchTerm)
         || row?.Id?.toString().includes(searchTerm)
+        || row?.OrderID?.toString().includes(searchTerm)
         // || row?.analyzerName?.toString().includes(searchTerm)
         // || row?.cptName?.toString().includes(searchTerm)
         // || row?.liscodeName?.toString().includes(searchTerm)
@@ -113,6 +114,7 @@ const TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodesL
         // || row?.unit?.toString().includes(searchTerm)
         // || row?.orderId?.toString().includes(searchTerm)
     );
+
 
     const sortedData = orderBy
         ? [...filteredData].sort((a, b) => {
@@ -180,7 +182,6 @@ const TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodesL
         setSampleFilterId(item)
         setEditValue(data)
         setSampleOpenDetailsModal(true)
-
     }
 
     useEffect(() => {
@@ -204,6 +205,8 @@ const TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodesL
         if (selectedAnalyzer?.length) {
             let filterData = data?.filter((item, i) => item?.AnalyzerName == selectedAnalyzer)
             setTableData(filterData)
+        }else{
+            setTableData([])
         }
     }, [selectedAnalyzer])
 
@@ -218,6 +221,7 @@ const TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodesL
                 detailsModalValue={[sampleDetailsModal, setSampleOpenDetailsModal]}
                 editDataValue={[editValue, setEditValue]}
                 sampleFilterId={sampleFilterId}
+                url = {url}
             />
             <HISDetailViewPopup
                 detailsModalValue={[hisOpenDetailsModal, setHisOpenDetailsModal]}
@@ -290,7 +294,7 @@ const TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodesL
                                         endIcon={<AddIcon />}
                                         onClick={() => url == 'HisAnalyzer' ? setOpenHisModal(true) : setOpenModal(true)}
                                     >
-                                        {url == 'HisAnalyzer' ? 'HIS Mapping' : 'Add item'}
+                                        {url == 'HisAnalyzer' ? 'ADD Mapping' : 'Add item'}
                                     </Button>
                                 )}
                             </>
@@ -453,7 +457,7 @@ const TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodesL
                                                                     {DateConvertion(row[item.id]) || '-'}
                                                                 </TableCell>
                                                             ) :
-                                                                item.id === 'SampleId' || item.id === 'MRN' ? (
+                                                                item.id === 'SampleId' || item.id === 'MRN' || item.id === 'SampleID'  ? (
                                                                     <Tooltip arrow title="Click for Details" placement="bottom">
                                                                         <TableCell onClick={() => sampleDetailView(row, item.id)} sx={{ paddingY: '10px', color: '#27A3B9', fontWeight: '600', cursor: 'pointer', pr: 0 }}>
                                                                             {row[item.id] || '-'}
@@ -484,6 +488,7 @@ const TableData = ({ data, headingName, tableHeadings, url, fetchData, LisCodesL
                                         {
                                             selectedAnalyzer && !sortedData.length ? 'No Data Found' :
                                                 analyzerDropDown ? 'Please Select Analyzer' :
+                                                // !selectedAnalyzer ? 'Please Select Analyzer' :
                                                     'No Data Found'}</TableCell>
                                 </TableRow>
                             )}

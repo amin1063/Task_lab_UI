@@ -18,8 +18,6 @@ export const navConfig = [
       { title: 'HIS Analyzer', path: '/HISAnalyzer' },
     ]
   },
-
-  
   {
     title: 'Tests',
     children: [

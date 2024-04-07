@@ -428,16 +428,17 @@ export const HeartBeatHeadings = [
 export const TestOrderHeadings = [
   { id: 'OrderID', label: 'OrderID' },
   { id: 'MRN', label: 'MRN' },
+  { id: 'SampleID', label: 'Sample ID' },
   { id: 'Physician', label: 'Physician' },
   { id: 'UserID', label: 'UserID' },
-  { id: 'MasterDesc', label: 'MasterDesc' },
-  { id: 'MasterIsActive', label: 'MasterIsActive' },
-  { id: 'HospitalID', label: 'HospitalID' },
+  { id: 'CPTID', label: 'CPT Name' },
+  { id: 'CPTPrice', label: 'CPTPrice' },
+  { id: 'Quantity', label: 'Quantity' },
   { id: 'BranchID', label: 'BranchID' },
   { id: 'OrderNumber', label: 'OrderNumber' },
-  { id: 'SampleID', label: 'SampleID' },
+  // { id: 'SampleID', label: 'SampleID' },
   { id: 'IsActive', label: 'IsActive' },
-  // { id: 'actions', label: 'Actions' },
+  { id: 'actions', label: 'Actions' },
 ]
 
 

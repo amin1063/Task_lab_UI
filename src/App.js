@@ -30,8 +30,8 @@ import HISAnalyzer from './pages/HISAnalyzer';
 import His from './pages/His';
 import HeartBeat from './pages/HeartBeat';
 import AnalyzerMachine from './pages/AnalyzerMachine';
-import CombinedOrder from './pages/CombinedOrder';
 import LoginPage from './components/Login/LoginPage';
+import TestOrder from './pages/TestOrder';
 
 function App() {
   const dispatch = useDispatch();
@@ -91,7 +91,7 @@ function App() {
           <Route path='/TestSamples' element={<TestSamples />} />
           <Route path='/TestUnits' element={<TestUnits />} />
           <Route path='/Users' element={<Users />} />
-          <Route path='/TestOrder' element={<CombinedOrder />} />
+          <Route path='/TestOrder' element={<TestOrder />} />
           {/* <Route path='/*' element={<NotFoundPage />} /> */}
         </Routes>
       </BrowserRouter>
